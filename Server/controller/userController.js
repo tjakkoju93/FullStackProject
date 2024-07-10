@@ -5,13 +5,13 @@ const createToken = require("../utils/token");
 //Login user
 
 const loginUser = async (req, res) => {
-    const { _id,email, password } = req.body;
+    const {email, password } = req.body;
 
     try {
       const user = await User.userLogin(email,password)
       //crerate token
       const token = await createToken(user._id)
-      res.status(200).json(token)
+      res.status(200).json({user,token})
   
   
     } catch (err) {

@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react';
 import axios from 'axios';
 import { Data } from '../../Context/WorkoutContext';
 import './FormStyle.scss'
 import { useAuthContext } from '../../Hooks/useAutContext'
+
+
 const Form = () => {
 
   const { workouts, setWorkouts, getWorkouts, form, setForm, updateForm, setUpdateForm } = useContext(Data)
 
   const { user } = useAuthContext()
+  const [laptop,setLaptop]= useState(null)
 
   //CREATE FORM FUNCTIONS
   const updateFormField = (e) => {
     const { name, value } = e.target;
+  
     setForm({
       ...form,
       [name]: value,
@@ -26,7 +30,11 @@ const Form = () => {
         "Authorization": `Bearer ${user.token}`
       }
     });
-    setWorkouts([...workouts, response.data])
+    const res = response.data
+    console.log(response.data)
+    setLaptop(response.data)
+    setWorkouts([...workouts,res])
+   
     setForm({
       title: "",
       reps: "",
@@ -53,6 +61,7 @@ const Form = () => {
         "Authorization" : `Bearer ${user.token}`
       }
     })
+    console.log(`from form.js , user id is ${user._id}`)
 
     getWorkouts()
     setUpdateForm({
@@ -63,7 +72,11 @@ const Form = () => {
 
     })
 
+    
+
   }
+  console.log(laptop)
+  
 
   return (
     <>

@@ -23,22 +23,25 @@ const Record = () => {
   return (
     <div className='mainrecord'>
       {
-        workouts && workouts.map((item) => {
-          return (
-            <div className="record" key={item._id}>
-              <h2>Exercise : {item.title}</h2>
-              <p>Reps : {item.reps}</p>
-              <p>Load in Kg : {item.load}</p>
-              <div className="btns">
-                <img src={edit} onClick={() => { toggleUpdate(item) }} alt="" /> {" "}
-                <img src={deletebtn} onClick={() => { deleteWorkout(item._id) }} alt="" />
+        // workouts && workouts.map((item) => {
+        //   return (
+        //     <div className="record" key={item._id}>
+        //       <h2>Exercise : {item.title}</h2>
+        //       <p>Reps : {item.reps}</p>
+        //       <p>Load in Kg : {item.load}</p>
+        //       <div className="btns">
+        //         <img src={edit} onClick={() => { toggleUpdate(item) }} alt="" /> {" "}
+        //         <img src={deletebtn} onClick={() => { deleteWorkout(item._id) }} alt="" />
               
             
-              </div>
-             </div>
+        //       </div>
+        //      </div>
 
-          )
-        })
+        //   )
+        // })
+
+        
+        console.log(workouts)
       }
     </div>
   )

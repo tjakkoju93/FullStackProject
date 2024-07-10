@@ -5,9 +5,8 @@ const Workout = require ('../models/workoutModels.js');
 //get all data
 const getWorkouts = async (req,res)=>{
     const user_id = req.user._id ;
-    console.log(user_id)
     try{
-        const workoutData  = await Workout.findindById({user_id}).sort({createdAt : -1});
+        const workoutData  = await Workout.findById(user_id).sort({createdAt : -1});
         res.status(200).json(workoutData)
 
     }catch(err){
@@ -31,9 +30,10 @@ const getWorkoutId = async(req,res)=>{
 
 //creating a new record
 const createWorkout = async(req,res)=>{
-    const {title,reps,load} = req.body     
+    const {title,reps,load} = req.body   
+    const user_id = req.user._id   
     try{
-        const user_id = req.user._id // requesting the user who has logged in to get the id
+        // requesting the user who has logged in to get the id
         const newWorkout = new Workout({title,reps,load , user_id})
         const workout = await newWorkout.save();
         res.status(201).json(workout)
