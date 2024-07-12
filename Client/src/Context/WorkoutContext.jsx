@@ -12,7 +12,7 @@ const WorkoutContext = ({ children }) => {
   const { user } = useAuthContext();
 
   //GET REQUEST STATE
-  const [workouts, setWorkouts] = useState([]);
+  const [workouts, setWorkouts] = useState(null);
 
 
   //POST Request State
@@ -24,14 +24,12 @@ const WorkoutContext = ({ children }) => {
 
   //GET Request Function
   const getWorkouts = async () => {
-    console.log("in get workouts")
     const responses = await axios.get("http://localhost:5300/api/workouts", {
       headers: {
         "Authorization": `Bearer ${user.token}`
       }
     });
     const data = responses.data;
-    console.log(`response data from workout context ${responses.data}`)
     setWorkouts(data);
   }
 

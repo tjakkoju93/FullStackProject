@@ -30,10 +30,10 @@ const Form = () => {
         "Authorization": `Bearer ${user.token}`
       }
     });
-    const res = response.data
+    // const res = [...workouts,response.data]
     console.log(response.data)
-    setLaptop(response.data)
-    setWorkouts([...workouts,res])
+    // setLaptop(res)
+    setWorkouts([...workouts,response.data])
    
     setForm({
       title: "",
@@ -75,7 +75,6 @@ const Form = () => {
     
 
   }
-  console.log(laptop)
   
 
   return (
