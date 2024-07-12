@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './Loginstyles.scss'
-import { useLoginHook } from '../../Hooks/useLoginHook'
+import { UseLoginHook } from '../../Hooks/UseLoginHook'
 
-const login = () => {
+const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const {loginHook,error} = useLoginHook();
+  const {loginHook,error} = UseLoginHook();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,4 +40,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

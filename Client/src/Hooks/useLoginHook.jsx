@@ -1,11 +1,11 @@
 // to access data frfom user storning data into database and store data in local storage
 import { useState } from "react";
-import { useAuthContext } from "./useAutContext";
+import { UseAuthContext } from "./UseAuthContext";
 
 
-export const useLoginHook = () => {
+export const UseLoginHook = () => {
     const [error, setError] = useState(null);
-    const { dispatch } = useAuthContext();
+    const { dispatch } = UseAuthContext();
     //handles post request
     const loginHook = async (email, password) => {
         setError(null);
@@ -18,8 +18,6 @@ export const useLoginHook = () => {
                 body: JSON.stringify({ email, password })
 
             }
-
-
         );
         console.log(response);
         const data = await response.json();
@@ -32,7 +30,7 @@ export const useLoginHook = () => {
             localStorage.setItem("user", JSON.stringify(data))
 
             //dispatch update user context
-            dispatch({type: 'LOGIN', payload: data} )
+            dispatch({ type: 'LOGIN', payload: data })
 
 
         }

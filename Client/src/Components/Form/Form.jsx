@@ -3,14 +3,14 @@ import { useContext } from 'react';
 import axios from 'axios';
 import { Data } from '../../Context/WorkoutContext';
 import './FormStyle.scss'
-import { useAuthContext } from '../../Hooks/useAutContext'
+import { UseAuthContext } from '../../Hooks/UseAuthContext'
 
 
 const Form = () => {
 
   const { workouts, setWorkouts, getWorkouts, form, setForm, updateForm, setUpdateForm } = useContext(Data)
 
-  const { user } = useAuthContext()
+  const { user } = UseAuthContext()
   const [laptop,setLaptop]= useState(null)
 
   //CREATE FORM FUNCTIONS

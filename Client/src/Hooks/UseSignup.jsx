@@ -1,11 +1,11 @@
 // to access data frfom user storning data into database and store data in local storage
 import { useState } from "react";
-import { useAuthContext } from "./useAutContext";
+import { UseAuthContext } from "./UseAuthContext";
 
 
 export const UseSignup = () => {
     const [error, setError] = useState(null);
-    const { dispatch } = useAuthContext();
+    const { dispatch } = UseAuthContext();
     //handles post request
     const signuphook = async (email, password) => {
         setError(null);

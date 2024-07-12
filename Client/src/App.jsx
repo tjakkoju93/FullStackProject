@@ -2,7 +2,7 @@ import axios from "axios"
 import './App.css'
 import { useEffect, useState } from "react"
 import { Route, BrowserRouter as Router, Routes ,Navigate } from "react-router-dom";
-import { useAuthContext } from "./Hooks/useAutContext";
+import { UseAuthContext } from "./Hooks/UseAuthContext";
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Login from "./Pages/Login/Login";
@@ -11,7 +11,7 @@ import Signup from "./Pages/Signup/Signup";
 
 function App() {
 
-  const {user} = useAuthContext()
+  const {user} = UseAuthContext()
 
   return (
     <div className="app">

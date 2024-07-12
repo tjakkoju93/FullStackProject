@@ -4,10 +4,10 @@ import { Data } from '../../Context/WorkoutContext'
 import './RecordStyle.scss'
 import edit from '../../assets/pencil.png'
 import deletebtn from '../../assets/delete.png';
-import { useAuthContext } from '../../Hooks/useAutContext'
+import { UseAuthContext } from '../../Hooks/UseAuthContext'
 
 const Record = () => {
-  const { user } = useAuthContext();
+  const { user } = UseAuthContext();
 
   //GET REQUEST
   const { workouts, getWorkouts, deleteWorkout, toggleUpdate } = useContext(Data)
@@ -21,7 +21,7 @@ const Record = () => {
 
 
   return (
-    <div className='mainrecord'>
+    <div className='mainrecord' key = {user._id}>
       {
         workouts && workouts.map((item) => {
           return (

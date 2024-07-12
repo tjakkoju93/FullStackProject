@@ -4,9 +4,11 @@ const Workout = require ('../models/workoutModels.js');
 
 //get all data
 const getWorkouts = async (req,res)=>{
+
     const user_id = req.user._id ;
+    
     try{
-        const workoutData  = await Workout.find(user_id).sort({createdAt : -1});
+        const workoutData  = await Workout.find({user_id}).sort({createdAt : -1});
         res.status(200).json(workoutData)
 
     }catch(err){

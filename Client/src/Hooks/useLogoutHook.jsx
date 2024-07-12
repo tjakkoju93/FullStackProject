@@ -1,8 +1,8 @@
-import { useAuthContext } from "./useAutContext";
+import { UseAuthContext } from "./UseAuthContext";
 
 
-export const useLogout = () => {
-    const {dispatch} = useAuthContext();
+export const UseLogout = () => {
+    const {dispatch} = UseAuthContext();
 
     const logout = () => {
         //remove data from local storage

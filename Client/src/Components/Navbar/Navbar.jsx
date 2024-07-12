@@ -1,12 +1,12 @@
 import React from 'react'
 import './NavbarStyles.scss'
 import { Link } from "react-router-dom";
-import { useLogout } from '../../Hooks/useLogoutHook'
-import { useAuthContext } from '../../Hooks/useAutContext';
+import { UseLogout } from '../../Hooks/UseLogoutHook'
+import { UseAuthContext } from '../../Hooks/UseAuthContext';
 
 const Navbar = () => {
-  const {user} = useAuthContext();
-  const { logout } = useLogout()
+  const {user} = UseAuthContext();
+  const { logout } = UseLogout()
   const handleClick = () => {
     logout();
   }

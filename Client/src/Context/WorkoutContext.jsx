@@ -1,7 +1,7 @@
 import React from 'react'
 import { createContext, useState } from 'react'
 import axios from 'axios'
-import { useAuthContext } from '../Hooks/useAutContext'
+import { UseAuthContext } from '../Hooks/UseAuthContext'
 
 export const Data = createContext();
 
@@ -9,7 +9,7 @@ export const Data = createContext();
 const WorkoutContext = ({ children }) => {
 
 
-  const { user } = useAuthContext();
+  const { user } = UseAuthContext();
 
   //GET REQUEST STATE
   const [workouts, setWorkouts] = useState(null);

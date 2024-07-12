@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './SignupStyles.scss'
 import { UseSignup } from '../../Hooks/UseSignup'
 
-const signup = () => {
+const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -39,4 +39,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup
