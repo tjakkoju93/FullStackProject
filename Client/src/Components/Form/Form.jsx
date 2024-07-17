@@ -11,7 +11,7 @@ const Form = () => {
   const { workouts, setWorkouts, getWorkouts, form, setForm, updateForm, setUpdateForm } = useContext(Data)
 
   const { user } = UseAuthContext()
-  const [laptop,setLaptop]= useState(null)
+  // const [laptop,setLaptop]= useState(null)
 
   //CREATE FORM FUNCTIONS
   const updateFormField = (e) => {
@@ -31,7 +31,6 @@ const Form = () => {
       }
     });
     // const res = [...workouts,response.data]
-    console.log(response.data)
     // setLaptop(res)
     setWorkouts([...workouts,response.data])
    
@@ -40,6 +39,8 @@ const Form = () => {
       reps: "",
       load: ""
     })
+
+    getWorkouts();
   }
 
   //UPDATE FORM FUNCTIONS

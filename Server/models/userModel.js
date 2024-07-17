@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt"); // helps in hasing password
-const { decrypt } = require("dotenv");
+// const { decrypt } = require("dotenv");
 
 const userSchema = mongoose.Schema(
   {

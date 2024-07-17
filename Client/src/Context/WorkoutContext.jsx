@@ -40,6 +40,7 @@ const WorkoutContext = ({ children }) => {
         "Authorization": `Bearer ${user.token}`
       }
     })
+    getWorkouts()
   }
 
   //UPDATE Request Function

@@ -17,7 +17,7 @@ const Record = () => {
     if (user) {
       getWorkouts();
     }
-  }, [user, getWorkouts])
+  }, [])
 
 
   return (
